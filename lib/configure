@@ -2931,13 +2931,13 @@ ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $
 ac_compiler_gnu=$ac_cv_c_compiler_gnu
 
 
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for sgemm in -lblas" >&5
-$as_echo_n "checking for sgemm in -lblas... " >&6; }
-if ${ac_cv_lib_blas_sgemm+:} false; then :
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for sgemm_ in -lopenblas" >&5
+$as_echo_n "checking for sgemm_ in -lopenblas... " >&6; }
+if ${ac_cv_lib_openblas_sgemm_+:} false; then :
   $as_echo_n "(cached) " >&6
 else
   ac_check_lib_save_LIBS=$LIBS
-LIBS="-lblas  $LIBS"
+LIBS="-lopenblas  $LIBS"
 cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 /* end confdefs.h.  */
 
@@ -2947,28 +2947,28 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 #ifdef __cplusplus
 extern "C"
 #endif
-char sgemm ();
+char sgemm_ ();
 int
 main ()
 {
-return sgemm ();
+return sgemm_ ();
   ;
   return 0;
 }
 _ACEOF
 if ac_fn_c_try_link "$LINENO"; then :
-  ac_cv_lib_blas_sgemm=yes
+  ac_cv_lib_openblas_sgemm_=yes
 else
-  ac_cv_lib_blas_sgemm=no
+  ac_cv_lib_openblas_sgemm_=no
 fi
 rm -f core conftest.err conftest.$ac_objext \
     conftest$ac_exeext conftest.$ac_ext
 LIBS=$ac_check_lib_save_LIBS
 fi
-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_blas_sgemm" >&5
-$as_echo "$ac_cv_lib_blas_sgemm" >&6; }
-if test "x$ac_cv_lib_blas_sgemm" = xyes; then :
-  blas_ok=yes; BLAS_LIBS="-lblas"
+{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_openblas_sgemm_" >&5
+$as_echo "$ac_cv_lib_openblas_sgemm_" >&6; }
+if test "x$ac_cv_lib_openblas_sgemm_" = xyes; then :
+  blas_ok=yes; BLAS_LIBS="-lopenblas"
 fi
 
 fi

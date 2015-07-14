@@ -26,7 +26,7 @@ fi
 blas_ok=no
 # check for Generic BLAS library
 if test "$blas_ok" = no; then
-	AC_CHECK_LIB(blas, sgemm, [blas_ok=yes; BLAS_LIBS="-lblas"])
+	AC_CHECK_LIB(openblas, sgemm_, [blas_ok=yes; BLAS_LIBS="-lopenblas"])
 fi
 # check for ATLAS library
 if test "$blas_ok" = no; then
